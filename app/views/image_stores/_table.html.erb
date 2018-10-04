@@ -1,0 +1,21 @@
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Device Mac ID</th>
+      <th>Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @image_stores.each do |image_store| %>
+      <tr>
+        <td><%= image_store.id %></td>
+        <td><%= image_store.session.device.mac_id %></td>
+        <td><%= image_tag image_store.image.url(:medium) %>
+        <td>
+          "Actions"
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

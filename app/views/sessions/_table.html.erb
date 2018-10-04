@@ -1,0 +1,26 @@
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Device Mac ID</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Created Date</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sessions.each do |session| %>
+      <tr>
+        <td><%= session.id %></td>
+        <td><%= session.device.mac_id %></td>
+        <td><%= session.start_time %></td>
+        <td><%= session.end_time %></td>
+        <td><% session.created_at %></td>
+        <td>
+        <%= link_to 'Images', image_stores_path(session_id: session.id), title: 'Show Images' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
