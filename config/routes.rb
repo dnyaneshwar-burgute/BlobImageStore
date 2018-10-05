@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :devices
       resources :sessions, only: :index do
-        member do
+        collection do
           post :upload_image
         end
       end
@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :devices
   resources :sessions
   resources :image_stores
+  root to: 'devices#index'
 end
